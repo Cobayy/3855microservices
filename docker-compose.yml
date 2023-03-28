@@ -30,7 +30,7 @@ services:
     volumes:
       - data:/var/lib/mysql
 
-  reciever:
+  receiver:
     image: receiver:latest
     ports:
       - 8080:8080
@@ -39,6 +39,11 @@ services:
     image: storage:latest
     ports:
       - 8090:8090
+
+  processing:
+    image: processing:latest
+    ports:
+      - 8100:8100
 
 volumes:
   data:
